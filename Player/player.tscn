@@ -159,8 +159,6 @@ script = ExtResource("1_4ntmi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gv5m4")
 
-[node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-
 [node name="Walk" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_l8h54")
@@ -186,3 +184,5 @@ script = ExtResource("5_k53q1")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("6_fhl08")
+
+[node name="Camera2D" type="Camera2D" parent="."]
