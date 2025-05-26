@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dcy06tnv6r8ge" path="res://Player/Scripts/state_walk.gd" id="6_fhl08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gv5m4"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_k53q1"]
 length = 0.001
@@ -150,6 +151,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 16
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
