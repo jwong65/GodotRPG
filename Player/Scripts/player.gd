@@ -4,15 +4,16 @@ var cardinal_direction: Vector2 = Vector2.ZERO
 var direction : Vector2 = Vector2.ZERO
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var idle = $Idle
+#@onready var idle = $Idle
 @onready var walk = $Walk
+@onready var idle_attack: Sprite2D = $Idle_Attack
 
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
 
 func _ready():
 	state_machine.Initialize(self)
-	idle.visible = true
+	idle_attack.visible = true
 	walk.visible = false
 
 #Delta is the elapsed time since previous frame
@@ -44,20 +45,37 @@ func SetDirection() -> bool:
 	cardinal_direction = new_direct
 	return true	
 
+#func UpdateAnimation(state: String) -> void:
+	## Play the animation based on current state and direction
+	#animation_player.play(state + "_" + AnimationDirection())
+#
+	#if state == "idle":
+		#idle.visible = true
+		#walk.visible = false
+	#else:
+		#idle.visible = false
+		#walk.visible = true
+#
+	#var flip = cardinal_direction == Vector2.LEFT
+	#idle.scale.x = -1 if flip else 1
+	#walk.scale.x = -1 if flip else 1
+	
 func UpdateAnimation(state: String) -> void:
 	# Play the animation based on current state and direction
 	animation_player.play(state + "_" + AnimationDirection())
 
-	if state == "idle":
-		idle.visible = true
-		walk.visible = false
-	else:
-		idle.visible = false
+	if state == "walk":
+		idle_attack.visible = false
 		walk.visible = true
+	else:
+		# For both 'idle' and 'attack', show the IdleAttack sprite
+		idle_attack.visible = true
+		walk.visible = false
 
 	var flip = cardinal_direction == Vector2.LEFT
-	idle.scale.x = -1 if flip else 1
+	idle_attack.scale.x = -1 if flip else 1
 	walk.scale.x = -1 if flip else 1
+
 
 
 func AnimationDirection() -> String: 
