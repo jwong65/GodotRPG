@@ -6,6 +6,7 @@ var direction : Vector2 = Vector2.ZERO
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var idle = $Idle
 @onready var walk = $Walk
+
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
 
