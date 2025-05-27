@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://4jxgmtfm0i31"]
+[gd_scene load_steps=29 format=3 uid="uid://4jxgmtfm0i31"]
 
 [ext_resource type="Script" uid="uid://q1ew5borkey8" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bmnqx7h7743si" path="res://Player/Sprites/walk.png" id="1_l8h54"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bru1h4shs3r8o" path="res://Player/Sprites/hurt.png" id="4_vtle1"]
 [ext_resource type="Texture2D" uid="uid://cc008nvaxei0v" path="res://Player/Sprites/AttackSprite01.png" id="5_00tjw"]
 [ext_resource type="Script" uid="uid://ckq0243h06rux" path="res://Player/Scripts/state_idle.gd" id="5_k53q1"]
+[ext_resource type="Texture2D" uid="uid://cwtryhlm0tlkm" path="res://Player/Sprites/Shadow.png" id="6_apopc"]
 [ext_resource type="Script" uid="uid://dcy06tnv6r8ge" path="res://Player/Scripts/state_walk.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://bd4kps8teix83" path="res://Player/Scripts/state_attack.gd" id="7_vtle1"]
 [ext_resource type="AudioStream" uid="uid://pjhni5ug65b1" path="res://Player/Audio/SwordSwoosh.wav" id="9_x3vf3"]
@@ -305,13 +306,13 @@ hframes = 8
 vframes = 3
 
 [node name="Idle" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_btcbx")
 hframes = 4
 vframes = 3
 frame = 4
 
 [node name="Attack" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("4_vtle1")
 hframes = 4
 vframes = 3
@@ -325,6 +326,14 @@ hframes = 12
 libraries = {
 &"": SubResource("AnimationLibrary_b1ygp")
 }
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 0.784314)
+show_behind_parent = true
+z_index = -1
+position = Vector2(-0.625, 7.32031)
+scale = Vector2(0.351563, 0.35498)
+texture = ExtResource("6_apopc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

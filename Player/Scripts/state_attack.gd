@@ -1,6 +1,7 @@
 class_name State_Attack extends State
 
 @export var attack_sound : AudioStream
+@export_range(1, 20, 0.5) var decelerate_speed : float = 5.0
 
 @onready var walk: State = $"../Walk"
 @onready var attack: State = $"."
@@ -29,8 +30,7 @@ func Exit()-> void:
 	pass
 
 func Process (_delta : float) -> State:
-	
-	player.velocity = Vector2.ZERO
+	player.velocity -= player.velocity * decelerate_speed * _delta
 #	This will make the player velocity zero while at idle.
 	if attacking == false:
 		if player.direction == Vector2.ZERO:
