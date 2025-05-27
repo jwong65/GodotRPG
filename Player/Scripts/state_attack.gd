@@ -2,6 +2,7 @@ class_name State_Attack extends State
 @onready var walk: State = $"../Walk"
 @onready var attack: State = $"."
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var attack_anim: AnimationPlayer = $"../../Attack/AttackSprite01/AnimationPlayer"
 @onready var idle: State = $"../Idle"
 
 
@@ -10,6 +11,7 @@ var attacking : bool = false
 # Function for when the player enters this state
 func Enter()-> void:
 	player.UpdateAnimation('attack')
+	attack_anim.play("attack_" + player.AnimationDirection())
 	animation_player.animation_finished.connect(EndAttack)
 	attacking = true
 	pass
