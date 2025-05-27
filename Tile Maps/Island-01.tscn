@@ -1,7 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://n0iwejmlvq7c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rdpw5"]
-load_path = "res://.godot/imported/Island_24x24.png-b4ed51e900666d55539547399074c98f.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkm2f"]
 texture = SubResource("CompressedTexture2D_rdpw5")
