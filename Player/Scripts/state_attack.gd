@@ -1,10 +1,11 @@
 class_name State_Attack extends State
-
-var attacking: bool = false
-
 @onready var walk: State = $"../Walk"
+@onready var attack: State = $"."
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var idle: State = $"../Idle"
+
+
+var attacking : bool = false
 
 # Function for when the player enters this state
 func Enter()-> void:
@@ -14,9 +15,12 @@ func Enter()-> void:
 	pass
 # Function for when player exits the state
 func Exit()-> void: 
+	animation_player.animation_finished.disconnect(EndAttack)
+	attacking = false
 	pass
 
 func Process (_delta : float) -> State:
+	
 	player.velocity = Vector2.ZERO
 #	This will make the player velocity zero while at idle.
 	if attacking == false:
@@ -30,7 +34,9 @@ func Physics(_delta: float)-> State:
 	return null
 	
 func HandleInput(_event: InputEvent) -> State:
+	if _event.is_action_pressed("attack"):
+		return attack
 	return null
-
+	
 func EndAttack( _newAnimName : String)-> void:
 	attacking = false
