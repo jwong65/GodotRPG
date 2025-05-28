@@ -11,6 +11,7 @@ var direction : Vector2 = Vector2.ZERO
 
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
+signal DirectionChanged(new_direction: Vector2)
 
 func _ready():
 	state_machine.Initialize(self)
@@ -45,6 +46,7 @@ func SetDirection() -> bool:
 	if new_direct == cardinal_direction:
 		return false
 	cardinal_direction = new_direct
+	DirectionChanged.emit(new_direct)
 	return true	
 
 #func UpdateAnimation(state: String) -> void:
