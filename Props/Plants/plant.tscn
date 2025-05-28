@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bunxkc11w1khg"]
+
+[ext_resource type="Texture2D" uid="uid://iwytxbvrspno" path="res://Props/Sprites/Bush.png" id="1_opo5d"]
+
+[node name="Plant" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_opo5d")
+hframes = 4
+vframes = 2
