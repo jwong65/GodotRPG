@@ -15,10 +15,12 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 signal DirectionChanged(new_direction: Vector2)
 
 func _ready():
+	PlayerManager.player = self
 	state_machine.Initialize(self)
 	idle.visible = true
 	walk.visible = false
 	attack.visible = false
+	
 
 #Delta is the elapsed time since previous frame
 func _process(delta):

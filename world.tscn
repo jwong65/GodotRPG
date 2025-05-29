@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://elsoxohey4b3"]
+[gd_scene load_steps=17 format=4 uid="uid://elsoxohey4b3"]
 
 [ext_resource type="PackedScene" uid="uid://4jxgmtfm0i31" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://detub0oddffpb" path="res://Tile Maps/Dirt01.tscn" id="2_tlwt5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btphlp5ancs2u" path="res://Tile Maps/Sprites/Hills.png" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bunxkc11w1khg" path="res://Props/Plants/plant.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://qmphurdux5wo" path="res://Enemy/Slime/BlueAnimatedSlime/Slime.tscn" id="8_ioo17"]
+[ext_resource type="PackedScene" uid="uid://7lv5bd23j8ig" path="res://Enemy/Slime/Orange2DSlime/OrangeSlime.tscn" id="9_wse8f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_036b0"]
 texture = ExtResource("3_aqk2v")
@@ -641,6 +642,9 @@ position = Vector2(14, 64)
 
 [node name="Plant2" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(118, 65)
+
+[node name="OrangeSlime" parent="." instance=ExtResource("9_wse8f")]
+position = Vector2(105, 3)
 
 [node name="Slime" parent="." instance=ExtResource("8_ioo17")]
 visible = false
