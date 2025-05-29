@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jq57sxsic38h"
-path="res://.godot/imported/slime-Sheet.png-3105940f99074ba05de4139d74aecaa3.ctex"
+uid="uid://brl5363i64mnb"
+path="res://.godot/imported/Sprite Sheet - Blue Jump Start-up.png-3093973d8de30ec85e3a0b2b751ead7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Slime/slime-Sheet.png"
-dest_files=["res://.godot/imported/slime-Sheet.png-3105940f99074ba05de4139d74aecaa3.ctex"]
+source_file="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump Start-up.png"
+dest_files=["res://.godot/imported/Sprite Sheet - Blue Jump Start-up.png-3093973d8de30ec85e3a0b2b751ead7e.ctex"]
 
 [params]
 

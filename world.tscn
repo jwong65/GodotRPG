@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6e0bd6iv67p" path="res://Tile Maps/Hills.tscn" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://btphlp5ancs2u" path="res://Tile Maps/Sprites/Hills.png" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bunxkc11w1khg" path="res://Props/Plants/plant.tscn" id="8_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://qmphurdux5wo" path="res://Enemy/Slime/Slime.tscn" id="8_ioo17"]
+[ext_resource type="PackedScene" uid="uid://qmphurdux5wo" path="res://Enemy/Slime/BlueAnimatedSlime/Slime.tscn" id="8_ioo17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_036b0"]
 texture = ExtResource("3_aqk2v")
@@ -636,10 +636,11 @@ z_index = -3
 tile_map_data = PackedByteArray("AAAZAAAAAAAAAAAAAAAZAAEAAAAAAAEAAAAZAAIAAAAAAAIAAAAaAAAAAAABAAAAAAAaAAEAAAABAAEAAAAaAAIAAAABAAIAAAAbAAAAAAACAAAAAAAbAAEAAAACAAEAAAAbAAIAAAACAAIAAAAQAAAAAAAEAAMAAAARAAAAAAAFAAMAAAASAAAAAAAFAAMAAAATAAAAAAAFAAMAAAAUAAAAAAAFAAMAAAAVAAAAAAAFAAMAAAAWAAAAAAAGAAMAAAAXAAAAAAAGAAMAAAAYAAAAAAAHAAMAAAD//wEAAAAAAAAAAAD//wIAAAAAAAEAAAD//wMAAAAAAAIAAAAAAAEAAAABAAAAAAAAAAIAAAABAAEAAAAAAAMAAAABAAIAAAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAAJAAUAAAACAAEAAAABAAAAAAACAAIAAAAJAAQAAAACAAMAAAAKAAUAAAADAAEAAAABAAAAAAADAAIAAAABAAEAAAADAAMAAAAFAAMAAAAEAAEAAAABAAAAAAAEAAIAAAABAAEAAAAEAAMAAAABAAIAAAAFAAEAAAACAAAAAAAFAAIAAAACAAEAAAAFAAMAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_wse8f")
 
-[node name="Slime" parent="." instance=ExtResource("8_ioo17")]
-
 [node name="Plant" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(14, 64)
 
 [node name="Plant2" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(118, 65)
+
+[node name="Slime" parent="." instance=ExtResource("8_ioo17")]
+visible = false

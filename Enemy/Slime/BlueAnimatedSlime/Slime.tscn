@@ -1,12 +1,12 @@
-[gd_scene load_steps=61 format=3 uid="uid://qmphurdux5wo"]
+[gd_scene load_steps=62 format=3 uid="uid://qmphurdux5wo"]
 
-[ext_resource type="Texture2D" uid="uid://c7lursvitg23n" path="res://Enemy/Slime/Sprite Sheet - Blue Idle.png" id="1_rfw3v"]
-[ext_resource type="Script" uid="uid://cpepfo6kr4pjc" path="res://Enemy/Slime/Slime.gd" id="2_glgjw"]
-[ext_resource type="Texture2D" uid="uid://chkpoi1gcv28l" path="res://Enemy/Slime/Sprite Sheet - Blue Death.png" id="2_srbyi"]
-[ext_resource type="Texture2D" uid="uid://cnx0v2i11sivj" path="res://Enemy/Slime/Sprite Sheet - Blue Hurt.png" id="3_080ii"]
-[ext_resource type="Texture2D" uid="uid://brl5363i64mnb" path="res://Enemy/Slime/Sprite Sheet - Blue Jump Start-up.png" id="4_080ii"]
-[ext_resource type="Texture2D" uid="uid://b1hkpr517dgqv" path="res://Enemy/Slime/Sprite Sheet - Blue Jump to Fall.png" id="5_aa6dy"]
-[ext_resource type="Texture2D" uid="uid://762faebtt3eb" path="res://Enemy/Slime/Sprite Sheet - Blue Jump Land.png" id="6_pvp36"]
+[ext_resource type="Texture2D" uid="uid://c7lursvitg23n" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Idle.png" id="1_rfw3v"]
+[ext_resource type="Script" uid="uid://cpepfo6kr4pjc" path="res://Enemy/Slime/BlueAnimatedSlime/Slime.gd" id="2_glgjw"]
+[ext_resource type="Texture2D" uid="uid://chkpoi1gcv28l" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Death.png" id="2_srbyi"]
+[ext_resource type="Texture2D" uid="uid://cnx0v2i11sivj" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Hurt.png" id="3_080ii"]
+[ext_resource type="Texture2D" uid="uid://brl5363i64mnb" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump Start-up.png" id="4_080ii"]
+[ext_resource type="Texture2D" uid="uid://b1hkpr517dgqv" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump to Fall.png" id="5_aa6dy"]
+[ext_resource type="Texture2D" uid="uid://762faebtt3eb" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump Land.png" id="6_pvp36"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brmyl"]
 atlas = ExtResource("2_srbyi")
@@ -395,11 +395,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dap0h"]
+radius = 7.0
+height = 26.0
+
 [node name="Slime" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 16
 script = ExtResource("2_glgjw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pvp36")
-animation = &"Hurt"
-frame_progress = 0.0435423
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dap0h")

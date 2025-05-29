@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnx0v2i11sivj"
-path="res://.godot/imported/Sprite Sheet - Blue Hurt.png-19a2011c6bf5c94457761f7ad9c0d150.ctex"
+uid="uid://dxvoh1dj1rsso"
+path="res://.godot/imported/Slime.png-02b8171c1754bd75d19a3a214017360b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Slime/Sprite Sheet - Blue Hurt.png"
-dest_files=["res://.godot/imported/Sprite Sheet - Blue Hurt.png-19a2011c6bf5c94457761f7ad9c0d150.ctex"]
+source_file="res://Enemy/Slime/Orange2DSlime/Slime.png"
+dest_files=["res://.godot/imported/Slime.png-02b8171c1754bd75d19a3a214017360b.ctex"]
 
 [params]
 
