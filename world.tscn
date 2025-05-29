@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://elsoxohey4b3"]
+[gd_scene load_steps=16 format=4 uid="uid://elsoxohey4b3"]
 
 [ext_resource type="PackedScene" uid="uid://4jxgmtfm0i31" path="res://Player/player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://detub0oddffpb" path="res://Tile Maps/Dirt01.tscn" id="2_tlwt5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6e0bd6iv67p" path="res://Tile Maps/Hills.tscn" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://btphlp5ancs2u" path="res://Tile Maps/Sprites/Hills.png" id="7_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://bunxkc11w1khg" path="res://Props/Plants/plant.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://qmphurdux5wo" path="res://Enemy/Slime/Slime.tscn" id="8_ioo17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_036b0"]
 texture = ExtResource("3_aqk2v")
@@ -634,6 +635,8 @@ tile_set = SubResource("TileSet_gbfbk")
 z_index = -3
 tile_map_data = PackedByteArray("AAAZAAAAAAAAAAAAAAAZAAEAAAAAAAEAAAAZAAIAAAAAAAIAAAAaAAAAAAABAAAAAAAaAAEAAAABAAEAAAAaAAIAAAABAAIAAAAbAAAAAAACAAAAAAAbAAEAAAACAAEAAAAbAAIAAAACAAIAAAAQAAAAAAAEAAMAAAARAAAAAAAFAAMAAAASAAAAAAAFAAMAAAATAAAAAAAFAAMAAAAUAAAAAAAFAAMAAAAVAAAAAAAFAAMAAAAWAAAAAAAGAAMAAAAXAAAAAAAGAAMAAAAYAAAAAAAHAAMAAAD//wEAAAAAAAAAAAD//wIAAAAAAAEAAAD//wMAAAAAAAIAAAAAAAEAAAABAAAAAAAAAAIAAAABAAEAAAAAAAMAAAABAAIAAAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAAJAAUAAAACAAEAAAABAAAAAAACAAIAAAAJAAQAAAACAAMAAAAKAAUAAAADAAEAAAABAAAAAAADAAIAAAABAAEAAAADAAMAAAAFAAMAAAAEAAEAAAABAAAAAAAEAAIAAAABAAEAAAAEAAMAAAABAAIAAAAFAAEAAAACAAAAAAAFAAIAAAACAAEAAAAFAAMAAAACAAIAAAA=")
 tile_set = SubResource("TileSet_wse8f")
+
+[node name="Slime" parent="." instance=ExtResource("8_ioo17")]
 
 [node name="Plant" parent="." instance=ExtResource("8_gbfbk")]
 position = Vector2(14, 64)
