@@ -9,7 +9,12 @@ func _ready ():
 	pass
 	
 func _process(delta: float) -> void:
+	ChangeState(current_state.process(delta))
 	pass
+func _physics_process(delta: float) -> void:
+	ChangeState(current_state.physics(delta))
+	pass
+	
 func initalize(_enemy: Enemy)-> void:
 	states = []
 	for c in get_children():
@@ -30,8 +35,8 @@ func ChangeState(new_state: EnemyState) -> void:
 		return
 	
 	if current_state:
-		current_state.Exit()
+		current_state.exit()
 		
 	prev_state = current_state
 	current_state = new_state
-	current_state.Enter()
+	current_state.enter()

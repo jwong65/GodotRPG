@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://qmphurdux5wo"]
+[gd_scene load_steps=65 format=3 uid="uid://qmphurdux5wo"]
 
 [ext_resource type="Texture2D" uid="uid://c7lursvitg23n" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Idle.png" id="1_rfw3v"]
 [ext_resource type="Script" uid="uid://cpepfo6kr4pjc" path="res://Enemy/Slime/BlueAnimatedSlime/Slime.gd" id="2_glgjw"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://brl5363i64mnb" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump Start-up.png" id="4_080ii"]
 [ext_resource type="Texture2D" uid="uid://b1hkpr517dgqv" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump to Fall.png" id="5_aa6dy"]
 [ext_resource type="Texture2D" uid="uid://762faebtt3eb" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Jump Land.png" id="6_pvp36"]
+[ext_resource type="Script" uid="uid://cfejw7l6uyl4w" path="res://Enemy/Scripts/enemy_state_machine.gd" id="8_nrn40"]
+[ext_resource type="Script" uid="uid://hegmvg71ejeg" path="res://Enemy/Scripts/States/enemy_state_idle.gd" id="9_nrn40"]
+[ext_resource type="Script" uid="uid://dvdfsavvgc7ph" path="res://Enemy/Scripts/States/enemy_state_wander.gd" id="10_vp63j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brmyl"]
 atlas = ExtResource("2_srbyi")
@@ -415,3 +418,14 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dap0h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("8_nrn40")
+
+[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+script = ExtResource("9_nrn40")
+after_idle_state = NodePath("../Wander")
+
+[node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("10_vp63j")
+next_state = NodePath("../Idle")

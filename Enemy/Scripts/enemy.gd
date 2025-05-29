@@ -20,7 +20,7 @@ func _ready():
 	enemy_state_machine.initalize(self)
 	player = PlayerManager.player
 	pass
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func set_direction ( _new_direction: Vector2)-> bool:
