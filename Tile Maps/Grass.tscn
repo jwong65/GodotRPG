@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://rthguuetfpjx"]
+[gd_scene load_steps=2 format=3 uid="uid://rthguuetfpjx"]
+
+[ext_resource type="Script" uid="uid://db4u2osusfuvp" path="res://Tile Maps/LevelTileMap.gd" id="1_j8ibm"]
 
 [node name="Grass" type="TileMapLayer"]
+script = ExtResource("1_j8ibm")
