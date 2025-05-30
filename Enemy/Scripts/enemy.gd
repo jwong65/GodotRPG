@@ -10,7 +10,7 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 var player : Player
-var invuilnearble : bool = false
+var invulnearble : bool = false
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
@@ -52,5 +52,8 @@ func AnimationDirection() -> String:
 	else:
 		return "side"
 func _take_damage( damage: int) -> void:
+#	invul frames
+	if invulnearble == true:
+		return
 	hp -= damage
 	enemy_damaged.emit()

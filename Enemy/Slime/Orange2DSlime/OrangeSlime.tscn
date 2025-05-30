@@ -768,8 +768,9 @@ after_idle_state = NodePath("../Wander")
 script = ExtResource("6_pvm8u")
 next_state = NodePath("../Idle")
 
-[node name="Stun" type="Node" parent="EnemyStateMachine"]
+[node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("9_un2ji")
+next_state = NodePath("../Idle")
 
 [node name="Destroyed" type="Node" parent="EnemyStateMachine"]
 
