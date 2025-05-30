@@ -15,10 +15,11 @@ var invuilnearble : bool = false
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
-
+@onready var hit_box : Hitbox = $Hitbox
 func _ready():
 	enemy_state_machine.initalize(self)
 	player = PlayerManager.player
+	hit_box.Damaged.connect(_take_damage)
 	pass
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -50,3 +51,6 @@ func AnimationDirection() -> String:
 		return "up"
 	else:
 		return "side"
+func _take_damage( damage: int) -> void:
+	hp -= damage
+	enemy_damaged.emit()
