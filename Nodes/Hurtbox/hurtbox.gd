@@ -10,3 +10,10 @@ func AreaEntered( a: Area2D )-> void:
 	if a is Hitbox:
 		a.TakeDamage( damage )
 	pass
+#
+
+#func AreaEntered(a: Area2D) -> void:
+	#print("Hurtbox entered by: ", a.name)
+	#if a is Hitbox:
+		#print("Hitbox detected! Applying damage:", damage)
+		#a.TakeDamage(damage)

@@ -266,7 +266,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_keriy")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -304,7 +304,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_widpw")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -419,15 +419,13 @@ script = ExtResource("2_glgjw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pvp36")
-animation = &"Death"
+animation = &"Hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dap0h")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="EnemyStateMachine" type="Node" parent="."]
 script = ExtResource("8_nrn40")
