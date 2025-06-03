@@ -647,4 +647,5 @@ position = Vector2(118, 65)
 position = Vector2(105, 3)
 
 [node name="Slime" parent="." instance=ExtResource("8_ioo17")]
+visible = false
 position = Vector2(150, -5)
