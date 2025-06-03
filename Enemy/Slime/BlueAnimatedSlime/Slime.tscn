@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://qmphurdux5wo"]
+[gd_scene load_steps=69 format=3 uid="uid://qmphurdux5wo"]
 
 [ext_resource type="Texture2D" uid="uid://c7lursvitg23n" path="res://Enemy/Slime/BlueAnimatedSlime/Sprite Sheet - Blue Idle.png" id="1_rfw3v"]
 [ext_resource type="Script" uid="uid://cpepfo6kr4pjc" path="res://Enemy/Slime/BlueAnimatedSlime/Slime.gd" id="2_glgjw"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cfejw7l6uyl4w" path="res://Enemy/Scripts/enemy_state_machine.gd" id="8_nrn40"]
 [ext_resource type="Script" uid="uid://hegmvg71ejeg" path="res://Enemy/Scripts/States/enemy_state_idle.gd" id="9_nrn40"]
 [ext_resource type="Script" uid="uid://dvdfsavvgc7ph" path="res://Enemy/Scripts/States/enemy_state_wander.gd" id="10_vp63j"]
+[ext_resource type="PackedScene" uid="uid://bd7a26cudcs2w" path="res://Nodes/Hitbox/hitbox.tscn" id="11_ub1y7"]
+[ext_resource type="PackedScene" uid="uid://bvctsi3i4fxdd" path="res://Nodes/Hurtbox/hurtbox.tscn" id="12_6f3ij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brmyl"]
 atlas = ExtResource("2_srbyi")
@@ -402,6 +404,13 @@ animations = [{
 radius = 7.0
 height = 26.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dtyt"]
+height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2qs2"]
+radius = 6.0
+height = 36.0
+
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 256
 collision_mask = 16
@@ -410,9 +419,10 @@ script = ExtResource("2_glgjw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_pvp36")
-animation = &"Idle"
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dap0h")
@@ -429,3 +439,19 @@ after_idle_state = NodePath("../Wander")
 [node name="Wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("10_vp63j")
 next_state = NodePath("../Idle")
+
+[node name="Hitbox" parent="." instance=ExtResource("11_ub1y7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 6)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_7dtyt")
+debug_color = Color(0.534378, 0.569113, 0.0466706, 0.42)
+
+[node name="Hurtbox" parent="." instance=ExtResource("12_6f3ij")]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 8)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_g2qs2")
+debug_color = Color(0.91338, 0.214535, 0.505059, 0.42)

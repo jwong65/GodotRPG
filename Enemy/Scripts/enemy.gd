@@ -13,7 +13,7 @@ var direction : Vector2 = Vector2.ZERO
 var player : Player
 var invulnearble : bool = false
 
-@onready var animation_player : AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
 @onready var hit_box : Hitbox = $Hitbox
@@ -33,6 +33,7 @@ func set_direction ( _new_direction: Vector2)-> bool:
 		(direction + cardinal_direction *0.1).angle()
 		/TAU * DIR_4.size()
 	))
+	
 	var new_dir = DIR_4[direction_id]
 	if new_dir == cardinal_direction:
 		return false
